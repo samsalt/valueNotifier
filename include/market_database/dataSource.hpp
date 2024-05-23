@@ -1,3 +1,4 @@
+// a pure virtual class
 #pragma once
 #include <string_view>
 #include <string>
@@ -6,8 +7,7 @@
 class dataSource {
     public:
     // Constructor is deleted to disallow default construction
-    // dataSource() = delete;
-    dataSource() = default;
+    dataSource() = delete;
 
     // Constructor takes a string_view for the source name
     dataSource(std::string_view sourceName);
@@ -20,8 +20,8 @@ class dataSource {
     dataSource(dataSource&&) = delete;
     dataSource& operator=(dataSource&&) = delete;
 
-    // Destructor is default-generated
-    virtual ~dataSource() = default;
+    // make this class pure virtual
+    virtual ~dataSource() = 0;
 
     void updateData();
 

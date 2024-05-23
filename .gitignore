@@ -40,3 +40,5 @@ runUnitTests
 CTestCostData.txt
 extern/googletest
 tests/CTestTestfile.cmake
+AlphaVantageAPIKey
+!build/tests/AlphaVantageAPIKey

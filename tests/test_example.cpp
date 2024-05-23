@@ -7,6 +7,7 @@ TEST(alphaSource, create) {
     // Verify that the source name matches the expected value
     const std::string sourceName = "alphaVantage";
     EXPECT_EQ(sourceName, avds.getSourceName());  // Check if 'avds' has the correct source name
+    EXPECT_NE("", avds.getApiKey());  // Check if 'avds' has the correct source name
 
 }
 
