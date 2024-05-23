@@ -1,0 +1,42 @@
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.make
+
+# CMake specific files that should not be ignored
+!CMakeLists.txt
+# !*.cmake
+
+# Build directories
+build/
+Release/
+Debug/
+
+# Tool-specific files
+.idea/
+.vs/
+.vscode/
+*.swp
+*~
+
+# Object files and archives
+*.o
+*.a
+*.so
+*.dylib
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+MarketTrackerServer
+runUnitTests
+
+# log file
+*.log
+CTestCostData.txt
+extern/googletest
+tests/CTestTestfile.cmake
