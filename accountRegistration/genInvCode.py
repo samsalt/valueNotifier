@@ -4,7 +4,7 @@ import secrets
 import string
 
 # a singleton class to generate invitation code and write it to database
-class InvitationCodeGenerator:
+class InvitationCodeManger:
     _instance = None
 
     def __new__(cls, *args, **kwargs):
@@ -55,5 +55,5 @@ class InvitationCodeGenerator:
 
 # Example usage
 if __name__ == "__main__":
-    generator = InvitationCodeGenerator()
+    generator = InvitationCodeManger()
     generator.generateInvCode()

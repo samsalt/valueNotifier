@@ -2,5 +2,6 @@
 
 int main() {
     alphaVantageDataSource avds;
+    avds.fetchData();
     return 0;
 }

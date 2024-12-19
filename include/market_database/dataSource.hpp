@@ -2,7 +2,9 @@
 #pragma once
 #include <string_view>
 #include <string>
+#include <vector>
 #include <iostream>
+#include <curl/curl.h>
 
 class dataSource {
     public:
@@ -28,4 +30,5 @@ class dataSource {
     std::string getSourceName() const { return sourceName_; }
     private:
     std::string sourceName_ {};
+    static const std::vector<std::string>& getTickerList();
 };

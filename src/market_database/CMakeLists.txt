@@ -7,6 +7,9 @@ file(GLOB market_database_SRC "*.cpp")
 # Add a library to the project, linking against the gathered source files
 add_library(market_database SHARED ${market_database_SRC})
 
+find_package(CURL REQUIRED)
+target_link_libraries(market_database ${CURL_LIBRARIES})
+
 # for debug
 message("${CMAKE_CURRENT_SOURCE_DIR}")
 
