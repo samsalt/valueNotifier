@@ -1,5 +1,9 @@
 # valueNotifier
 
+A stock market tracking Web service.
+
+Formed by Django framework with C++ services.
+
 ## Dependency
 - cmake
 - libcurl. To install
