@@ -73,10 +73,15 @@ WSGI_APPLICATION = 'sycee.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# need to update user info in environment later
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',       # Database name
+        'USER': 'myuser',            # Database user
+        'PASSWORD': 'mypassword',    # Database password
+        'HOST': 'localhost',        # Database host (use 'localhost' for local development)
+        'PORT': '5432',              # Default PostgreSQL port
     }
 }
 
