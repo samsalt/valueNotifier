@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'mydatabase',       # Database name
         'USER': 'myuser',            # Database user
         'PASSWORD': 'mypassword',    # Database password
-        'HOST': 'localhost',        # Database host (use 'localhost' for local development)
+        'HOST': '127.0.0.1',  # Use IPv4
         'PORT': '5432',              # Default PostgreSQL port
     }
 }
