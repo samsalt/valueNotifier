@@ -5,9 +5,19 @@
   <p>
     Welcome to Stock Market!
   </p>
-  <a href="{% url 'login' %}">
+  {% comment %} <a href="{% url 'login' %}">
     <button>Sign In</button>
-  </a>
+  </a> {% endcomment %}
+
+  {% comment %} login button {% endcomment %}
+  {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}!</p>
+    <a href="{% url 'logout' %}">Logout</a>
+    <!-- Add other content for logged-in users -->
+  {% else %}
+    <a href="{% url 'login' %}?next={{ request.path }}">Sign In</a>
+  {% endif %}
+
   <h2>Dynamic content</h2>
   <p>The library has the following record counts:</p>
   <ul>

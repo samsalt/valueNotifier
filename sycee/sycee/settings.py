@@ -106,6 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# redirect to index after logged in
+LOGIN_REDIRECT_URL = 'stock:index'  # Replace 'stock:index' with the name of your home page URL pattern
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
