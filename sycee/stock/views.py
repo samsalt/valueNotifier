@@ -8,8 +8,8 @@ def index(request):
     """View function for home page of site."""
 
     # Generate counts of some of the main objects
-    # num_records = DailyStock.objects.all().count()
-    num_records = 0
+    num_records = DailyStock.objects.all().count()
+    # num_records = 0
 
     # num_instances_available = BookInstance.objects.filter(status__exact='a').count()
 
