@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # redirect to index after logged in
-LOGIN_REDIRECT_URL = 'stock:index'  # Replace 'stock:index' with the name of your home page URL pattern
+LOGIN_REDIRECT_URL = 'stock/index'  # Replace 'stock:index' with the name of your home page URL pattern
 
 
 # Internationalization
