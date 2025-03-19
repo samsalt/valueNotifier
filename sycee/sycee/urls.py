@@ -37,5 +37,7 @@ urlpatterns += [
 # Temp static files
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+urlpatterns += path('accounts/', include('accounts.urls')),  # New accounts app
+
 
 
