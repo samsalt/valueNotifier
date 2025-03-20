@@ -31,14 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'accounts.apps.AccountsConfig',
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'stock.apps.StockConfig',
-    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # redirect to index after logged in
-LOGIN_REDIRECT_URL = 'stock/index'  # Replace 'stock:index' with the name of your home page URL pattern
+LOGIN_REDIRECT_URL = "/"
+# LOGOUT_REDIRECT_URL = "/accounts/login/"
+LOGOUT_REDIRECT_URL = '/accounts/logout/'
 
 
 # Internationalization
