@@ -1,9 +1,7 @@
 from django.db import models
-
-# Create your models here.
-
-from django.db import models
 from django.core.exceptions import ValidationError
+from accounts.models import User
+from django.conf import settings
 
 class DailyStock(models.Model):
     id = models.CharField(primary_key=True, max_length=21, editable=False)
@@ -36,3 +34,21 @@ class DailyStock(models.Model):
     def get_absolute_url(self):
         """Returns the URL to access a particular instance of the model."""
         return reverse('stock-day-price', args=[str(self.id)])
+
+class Stock(models.Model):
+    symbol = models.CharField(max_length=10, unique=True)
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.symbol} - {self.name}"
+
+class UserStock(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    stock = models.ForeignKey(Stock, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'stock')
+
+    def __str__(self):
+        return f"{self.user.username} tracks {self.stock.symbol}"
