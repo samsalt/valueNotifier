@@ -24,12 +24,6 @@ class User(AbstractUser):
         verbose_name='user permissions',
     )
 
-
-def generate_invitation_code(length=10):
-    alphabet = string.ascii_letters + string.digits
-    return ''.join(secrets.choice(alphabet) for _ in range(length))
-
-
 class InvitationCode(models.Model):
     code = models.CharField(max_length=20, unique=True, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -44,6 +38,9 @@ class InvitationCode(models.Model):
     used_at = models.DateTimeField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
+        def generate_invitation_code(length=10):
+            alphabet = string.ascii_letters + string.digits
+            return ''.join(secrets.choice(alphabet) for _ in range(length))
         if not self.pk:  # New instance
             # Generate a unique code
             while True:
@@ -51,8 +48,9 @@ class InvitationCode(models.Model):
                 if not InvitationCode.objects.filter(code=new_code).exists():
                     self.code = new_code
                     break
-            # Set expiration to 30 days from creation
-            self.expires_at = timezone.now() + timezone.timedelta(days=30)
+            # Set expiration to 30 days from creation if not set
+            if not self.expires_at:
+                self.expires_at = timezone.now() + timezone.timedelta(days=30)
         super().save(*args, **kwargs)
 
     def is_valid(self):

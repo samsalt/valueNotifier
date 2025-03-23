@@ -84,6 +84,9 @@ DATABASES = {
         'PASSWORD': 'mypassword',    # Database password
         'HOST': '127.0.0.1',  # Use IPv4
         'PORT': '5432',              # Default PostgreSQL port
+        'TEST': {
+            'NAME': 'test_sycee',
+        },
     }
 }
 
