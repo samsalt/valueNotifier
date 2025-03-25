@@ -19,7 +19,7 @@ if [ ! -f "manage.py" ]; then
 fi
 
 echo "Installing python packages..."
-pip install requests django djangorestframework psycopg2
+pip install requests django djangorestframework psycopg2-binary
 
 # Run migrations
 echo "Creating and applying database migrations..."
