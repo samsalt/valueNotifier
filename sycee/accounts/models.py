@@ -25,7 +25,7 @@ class User(AbstractUser):
     )
 
 class InvitationCode(models.Model):
-    code = models.CharField(max_length=20, unique=True, editable=False)
+    code = models.CharField(max_length=20, editable=False, primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField()
     used_by = models.OneToOneField(
